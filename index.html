@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--レスポンシブデザインのためにビューポートを設定。デバイスの幅に合わせて適切に表示されるようになる。-->
+    <title>Rock, Paper, Scissors game</title>
+    <link rel="stylesheet" href="./css/janken.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">  <!--Google FontsからRobotoフォントを導入-->
+</head>
+
+<body>
+    <div class="container">  <!--ゲームの全体を囲むコンテナ。-->
+        <h1 id="title">Rock, Paper, Scissors game</h1>
+        <label for="language-select" id="choose-language">Choose Language: </label>
+        <select id="language-select" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="zh">中文</option>
+            <option value="ko">한국어</option>
+        </select>
+        <p id="choice-text"> Take your choice </p>
+
+<!--ボタンエリア-->
+        <div class="buttons">
+            <button onclick="playGame('Rock')">
+                <img src="./img/guu.png" alt="Rock">
+            </button>
+            <button onclick="playGame('Scissors')">
+                <img src="./img/choki.png" alt="Scissors">
+            </button>
+            <button onclick="playGame('Paper')">
+                <img src="./img/pa.png" alt="Paper">
+            </button>
+        </div>
+
+<!--結果表示エリア-->
+        <div id="result" class="fade-in">
+            <p><span id="your-choice">Your choice:</span> <span id="playerChoice"></span></p>
+            <p><span id="computer-choice">Computer choice:</span> <span id="computerChoice"></span></p>
+            <p id="resultText"></p>
+        </div>
+    </div>
+
+<!--ゲームの勝利時にアニメーション表示-->
+<div id="confetti-container"></div>
+
+<!--jQueryとjs読み込み-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="janken.js"></script>
+</body>
+
+</html>

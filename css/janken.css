@@ -1,0 +1,142 @@
+body {
+    display: flex;  /*ページ全体をフレックスボックスレイアウトで中央に配置し、*/
+    justify-content: center; /*垂直および水平にコンテンツを画面中央に配置*/
+    align-items: center;
+    height: 100vh;/*ビューポート全体の高さを使用し、中央揃えのレイアウトを簡単に実現。*/
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #d9ebfa;  /*薄い水色*/
+}
+
+.container {
+    text-align: center;  /*中央揃えでテキストを配置*/
+    padding: 60px;
+    border-radius: 10px;  /*角丸める*/
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  /*ソフトな影、立体感*/
+}
+
+h1 {
+    font-size: 60px;
+    color: #333;
+}
+
+#choice-text{
+    font-size: 25px;
+    margin-top: 25px;
+}
+
+
+.buttons button {
+    border: none;   /*枠線と背景を消し、ボタンとしてのスタイルを削除。*/
+    background: none; /*枠線と背景を消し、ボタンとしてのスタイルを削除。*/
+    cursor: pointer; /*手のポインター*/
+    margin: 1px 30px;  /*ボタン間の間隔と余白を調整*/
+    padding: 10px; /*ボタン間の間隔と余白を調整*/
+    transition: transform 0.3s ease; /* ホバー時のスケール（拡大）効果をなめらかにするためのトランジション */
+}
+
+/* ホバー時に少し拡大 */
+.buttons button:hover {
+    transform: scale(1.1);
+}
+
+/* 画像のサイズを調整 */
+.buttons img {
+    width: 150px;
+    height: 150px;
+}
+
+#result {
+    margin-top: 40px;  /*結果表示エリアとボタンの間隔を広げる*/
+    font-size: 35px; /* フォントサイズを大きく */
+    color: #444;
+    background-color: rgba(255, 255, 255, 0.9); /* 半透明の白背景 */
+    padding: 15px;
+    border-radius: 8px;  /*角を丸め*/
+    border: 2px solid #007BFF; /* ボーダー色を追加 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* シャドウを追加 */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* アニメーション効果 */
+    opacity: 0; /* 初期状態は透明 */
+}
+
+#result.show {
+    opacity: 1; /* 表示時に不透明 */
+    transform: scale(1.05); /* 少し拡大 */
+}
+
+#result p {
+    margin: 0; /* 段落のマージンをリセット */
+    font-weight: bold; /* 太字 */
+}
+
+#result #resultText {
+    font-size: 45px; /* 結果テキストを少し大きく */
+    color: #007BFF; /* 結果のテキスト色を青に */
+    transition: color 0.3s ease; /* 色変更にアニメーション効果 */
+}
+
+#result #resultText.win {
+    color: rgb(255, 0, 0); /* 勝利時のテキスト色 */
+}
+
+#result #resultText.lose {
+    color: rgb(0, 81, 255); /* 敗北時のテキスト色 */
+}
+
+#result #resultText.draw {
+    color: orange; /* 引き分け時のテキスト色 */
+}
+
+.buttons button:active {
+    transform: scale(0.95);
+    /* クリック時に少し縮小 */
+}
+
+#confetti-container {
+    position: fixed;  /*画面全体を覆う配置*/
+    top: 0; /*画面全体を覆う配置*/
+    left: 0; /*画面全体を覆う配置*/
+    width: 100%; /*画面全体を覆う配置*/
+    height: 100%; /*画面全体を覆う配置*/
+    pointer-events: none;  /*イベントを無効化*/
+    overflow: hidden;  /*画面外にはみ出る要素を隠す*/
+    z-index: 1000;  /*コンテンツの最上位に表示*/
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffdd57;
+    opacity: 0.7;
+    border-radius: 50%;
+    animation: fall 3s linear infinite;  /*3秒間で落下する無限アニメーション*/
+}
+
+/* 紙吹雪が降るアニメーション */
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);  /*下方向に画面全体を移動し、同時に360度回転して透明になる効果を設定*/
+        opacity: 0;
+    }
+}
+
+
+/*レスポンシブ↓*/
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .buttons img {
+        width: 80px;
+        /* 小さい画面でのサイズ調整 */
+        height: 80px;
+    }
+
+    #result {
+        font-size: 20px;
+        /* 結果表示のフォントサイズ */
+    }
+}
