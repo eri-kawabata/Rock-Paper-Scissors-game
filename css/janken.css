@@ -10,20 +10,20 @@ body {
 
 .container {
     text-align: center;  /*中央揃えでテキストを配置*/
-    padding: 60px;
+    padding: 40px;
     border-radius: 10px;  /*角丸める*/
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  /*ソフトな影、立体感*/
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 40px;
     color: #333;
 }
 
 #choice-text{
-    font-size: 25px;
-    margin-top: 25px;
+    font-size: 20px;
+    margin-top: 20px;
 }
 
 
@@ -31,7 +31,7 @@ h1 {
     border: none;   /*枠線と背景を消し、ボタンとしてのスタイルを削除。*/
     background: none; /*枠線と背景を消し、ボタンとしてのスタイルを削除。*/
     cursor: pointer; /*手のポインター*/
-    margin: 1px 30px;  /*ボタン間の間隔と余白を調整*/
+    margin: 1px 25px;  /*ボタン間の間隔と余白を調整*/
     padding: 10px; /*ボタン間の間隔と余白を調整*/
     transition: transform 0.3s ease; /* ホバー時のスケール（拡大）効果をなめらかにするためのトランジション */
 }
@@ -43,13 +43,13 @@ h1 {
 
 /* 画像のサイズを調整 */
 .buttons img {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
 }
 
 #result {
-    margin-top: 40px;  /*結果表示エリアとボタンの間隔を広げる*/
-    font-size: 35px; /* フォントサイズを大きく */
+    margin-top: 20px;  /*結果表示エリアとボタンの間隔を広げる*/
+    font-size: 25px; /* フォントサイズを大きく */
     color: #444;
     background-color: rgba(255, 255, 255, 0.9); /* 半透明の白背景 */
     padding: 15px;
